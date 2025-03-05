@@ -1,7 +1,7 @@
 const GitHubCorner = () => {
     return (
         <a
-            href={'/'}
+            href={'https://github.com/maximovj'}
             className="fixed top-0 right-0 border-0 text-[var(--primary-color)] fill-[var(--secondary-color)]"
             aria-label="View source on GitHub"
         >
