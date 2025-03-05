@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+  --primary-color: #ffffff; /* Blanco */
+  --secondary-color: #151513; /* Negro GitHub */
+}
