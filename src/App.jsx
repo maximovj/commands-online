@@ -1,43 +1,21 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import ToolBar from "./components/ToolBar";
-import Container from "./components/Container";
-import GitHubCorner from "./components/GitHubCorner";
-import NotFound from "./components/NotFound";
-import ButtonUp from "./components/ButtonUp";
-import CommandList from "./components/CommandList";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import All from './pages/All';
 
-function App() {
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path='all' element={<All />}></Route>
+                    <Route path="*" element={<NotFound title={'OOPS'} text={'Página no encontrada'} />} /> {/* Ruta para manejo de 404 */}
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
-  const [success, setSuccess] = useState(true);
-
-  const showCards = () => {
-    setSuccess(!success);
-  }
-
-  return (
-    <>
-      <GitHubCorner />
-      <ButtonUp />
-      <Header />
-      <Container>
-        <div className='min-h-screen flex flex-col items-center justify-center'>
-          <ToolBar showCards={showCards} success={success} />
-          {
-            success ? (
-              <div className="flex-grow w-full h-full m-4">
-                {/* bg-red-400 */}
-                <CommandList title="OOPS" text="Lo siento, elementos no encontrados..." />
-              </div>
-            ) : null
-          }
-        </div>
-      </Container>
-      <Footer />
-
-    </>
-  )
-}
-
-export default App
+export default App;
