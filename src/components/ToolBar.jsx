@@ -1,23 +1,24 @@
-function ToolBar({ showCards, success }) {
+import SearchQuick from "./SearchQuick";
 
+function ToolBar({ showCards, success }) {
     const tools = ['React', 'Vue', 'Laravel', 'Spring Boot', 'VSCode', 'Vim', 'etc'];
 
     return (
         <>
             <div className="flex flex-col justify-center align-middle items-center w-3/6">
                 {
-                    !success ? (<>
-                        <p className="w-full mb-4 text-2xl dark:text-gray-50">
-                            <span className="text-5xl font-bold">C</span>onsulte comandos de distintos herramientas y frameworks para desarrollo web, así como :&nbsp;
-                            {tools.map(el => (<span className="text-purple-700">{el}, </span>))}
-                        </p>
-                    </>) : null
+                    !success ? (
+                        <>
+                            <p className="w-full mb-4 text-2xl dark:text-gray-50">
+                                <span className="text-5xl font-bold">C</span>onsulte comandos de distintos herramientas y frameworks para desarrollo web, así como :&nbsp;
+                                {tools.map(el => (<span className="text-purple-700" key={el}>{el}, </span>))}
+                            </p>
+                        </>
+                    ) : null
                 }
-                <input
-                    type="text"
-                    placeholder="Buscar..."
-                    className="bg-gray-200 border-0 rounded-2xl w-full shadow-gray-800 py-4 px-8 shadow-sm m-4"
-                />
+
+                <SearchQuick />
+
                 <div className="flex gap-4">
                     <button
                         onClick={() => showCards()}
@@ -38,7 +39,7 @@ function ToolBar({ showCards, success }) {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
-export default ToolBar
+export default ToolBar;
