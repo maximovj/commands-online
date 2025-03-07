@@ -1,6 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Material+Icons&display=block');
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --primary-color: #ffffff; /* Blanco */
   --secondary-color: #151513; /* Negro GitHub */
 }
+
+ninja-keys {
+  --ninja-overflow-background: rgba(0, 0, 0, 0.5);
+  --ninja-icon-size: 1.7em;
+}
+
+@layer utilities {
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+    }
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 1.5s infinite ease-in-out;
+  }
+
+  @keyframes border-pulse {
+    0%,
+    100% {
+      border-width: 2px;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      border-width: 6px;
+      border-color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  .animate-border-pulse {
+    animation: border-pulse 1.5s infinite ease-in-out;
+  }
+}
+
