@@ -14,7 +14,7 @@ ninja-keys {
   --ninja-icon-size: 1.7em;
 }
 
-@layer utilities {
+@layer components {
   @keyframes wiggle {
     0%,
     100% {
