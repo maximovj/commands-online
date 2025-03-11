@@ -40,7 +40,7 @@ function All() {
         <>
             <ToolBar success={true} />
             <div className="flex-grow w-full h-full p-4 lg:px-23">
-                <div className="flex gap-4 py-4">
+                <div className="flex flex-col md:flex-row gap-4 py-4">
                     {/* Filtro de Tags */}
                     <select
                         title="Language"
