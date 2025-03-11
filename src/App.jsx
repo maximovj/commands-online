@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
 import Layout from './components/Layout';
 import NotFound from './pages/NotFound';
 import Home from './pages/Home';
@@ -22,6 +24,7 @@ const App = () => {
                     <Route path="*" element={<NotFound title={'OOPS'} text={'Página no encontrada'} />} /> {/* Ruta para manejo de 404 */}
                 </Route>
             </Routes>
+            <ToastContainer />
         </BrowserRouter>
     );
 };
