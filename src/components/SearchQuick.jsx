@@ -13,34 +13,36 @@ function SearchQuick() {
         if (ninjaKeysRef.current) {
             ninjaKeysRef.current.data = [{
                 id: "Home",
-                title: "Open Home",
+                title: "Abrir inicio",
                 hotkey: `${isMac}+h`,
                 mdIcon: "home",
+                section: "Home",
                 handler: () => {
                     navigate('/');
                 }
             },
             {
                 id: "All",
-                title: "Open All",
+                title: "Abrir Todos",
                 hotkey: `${isMac}+a`,
-                mdIcon: "apps",
+                mdIcon: "star",
+                section: "All",
                 handler: () => {
                     navigate('/all');
                 }
             },
             {
                 id: "BackEnd",
-                title: "Open BackEnd",
+                title: "Abrir BackEnd",
                 hotkey: `${isMac}+b`,
-                mdIcon: "apps",
+                mdIcon: "storage",
                 handler: () => {
                     navigate('/backend');
                 }
             },
             {
                 id: "FrontEnd",
-                title: "Open FrontEnd",
+                title: "Abrir FrontEnd",
                 hotkey: `${isMac}+f`,
                 mdIcon: "apps",
                 handler: () => {
@@ -49,44 +51,21 @@ function SearchQuick() {
             },
             {
                 id: "DevOps",
-                title: "Open DevOps",
+                title: "Abrir DevOps",
                 hotkey: `${isMac}+d`,
-                mdIcon: "apps",
+                mdIcon: "settings",
                 handler: () => {
                     navigate('/devops');
                 }
             },
             {
                 id: "Tools",
-                title: "Open Tools",
+                title: "Abrir Tools",
                 hotkey: `${isMac}+t`,
-                mdIcon: "apps",
+                mdIcon: "build",
                 handler: () => {
                     navigate('/tools');
                 }
-            },
-            {
-                id: "Theme",
-                title: "Change theme...",
-                mdIcon: "desktop_windows",
-                children: [
-                    {
-                        id: "Light Theme",
-                        title: "Change theme to Light",
-                        mdIcon: "light_mode",
-                        handler: () => {
-                            console.log("theme light");
-                        }
-                    },
-                    {
-                        id: "Dark Theme",
-                        title: "Change theme to Dark",
-                        mdIcon: "dark_mode",
-                        handler: () => {
-                            console.log("theme dark");
-                        }
-                    }
-                ]
             }];
         }
     }, []);
@@ -115,7 +94,7 @@ function SearchQuick() {
             </button>
 
             {/* Usa la referencia de ninja-keys y pasa los hotkeys */}
-            <ninja-keys ref={ninjaKeysRef}>
+            <ninja-keys ref={ninjaKeysRef} placeholder="Búsqueda rápida">
                 <div slot="footer"></div>
             </ninja-keys>
         </>

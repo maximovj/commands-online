@@ -26,10 +26,12 @@ function ButtonUp() {
     return (
         <button
             className={`transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-                } bg-fuchsia-900 hover:bg-fuchsia-800 cursor-pointer text-gray-50 rounded-full h-14 w-14 fixed bottom-4 right-4 animate-border-pulse`}
+                } bg-cyan-700 hover:bg-cyan-600 cursor-pointer text-gray-50 rounded-full h-14 w-14 fixed bottom-4 right-4 animate-border-pulse`}
             onClick={scrollToTop}
         >
-            Subir
+            <span class="material-icons">
+                arrow_upward
+            </span>
         </button>
     );
 }

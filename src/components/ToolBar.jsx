@@ -20,7 +20,7 @@ function ToolBar({ success }) {
                 <p className="w-1/2 mb-4 text-2xl dark:text-gray-50">
                     <span className="text-5xl font-bold">C</span>onsulte comandos de distintas herramientas y frameworks para desarrollo web, así como:&nbsp;
                     {tools.map(el => (
-                        <span className="text-purple-700" key={el}>{el}, </span>
+                        <span className="text-cyan-600" key={el}>{el}, </span>
                     ))}
                 </p>
             )}
@@ -33,7 +33,7 @@ function ToolBar({ success }) {
                         key={path}
                         onClick={() => navigate(path)}
                         className={`border-0 rounded-2xl py-2 px-4 mt-4 hover:shadow-lg 
-                        ${location.pathname === path ? "bg-purple-700 text-white" : "bg-gray-200"}
+                        ${location.pathname === path ? "bg-cyan-600 text-white" : "bg-gray-200"}
                         animate-bounce hover:animate-[wiggle_1s_ease-in-out_infinite]`}
                     >
                         {label}
