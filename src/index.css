@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Material+Icons&display=block');
+@import url("https://fonts.googleapis.com/css?family=Material+Icons&display=block");
 
 @import "tailwindcss";
 
@@ -52,17 +52,25 @@ ninja-keys {
   @keyframes border-pulse {
     0%,
     100% {
-      border-width: 2px;
-      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
+      border: 0px solid #ffff;
     }
     50% {
-      border-width: 6px;
-      border-color: rgba(255, 255, 255, 1);
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      border: 2px solid #ffffff00;
     }
   }
 
   .animate-border-pulse {
     animation: border-pulse 1.5s infinite ease-in-out;
+    -webkit-animation: border-pulse 1.5s infinite ease-in-out;
   }
 }
-
