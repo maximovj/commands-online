@@ -2,12 +2,17 @@ function Card({ el }) {
     return (
         <>
             {/* Card */}
-            <div className="bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-400 p-4 rounded-lg shadow-lg flex flex-col justify-center items-center">
-                <img src="https://placehold.co/150" alt="Imagen de la tarjeta" className="w-32 h-32 object-cover rounded-md mb-4 " />
-                <h3 className="text-xl font-semibold">Título de la tarjeta #{el + 1}</h3>
-                <p className="">Subtítulo de la tarjeta #{el + 1}</p>
+            <div className="bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-400 p-4 rounded-lg shadow-lg">
+                <h3 className="text-lg font-bold">{el.framework}</h3>
+                <p className="mt-2">{el.description}</p>
+
+                <div class="mt-3">
+                    <button class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-400 px-2 py-1 rounded-md">
+                        Copiar comando principal
+                    </button>
+                </div>
+
                 <div className="flex flex-col">
-                    <p className="mt-2">Descripción de la tarjeta. Aquí puedes poner información adicional sobre el contenido de la tarjeta.</p>
 
                     {/* Lista dentro de la tarjeta */}
                     <ul className="mt-4 space-y-2 ">
@@ -25,7 +30,7 @@ function Card({ el }) {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

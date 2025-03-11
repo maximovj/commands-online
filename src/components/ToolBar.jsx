@@ -1,44 +1,46 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import SearchQuick from "./SearchQuick";
 
-function ToolBar({ showCards, success }) {
+function ToolBar({ success }) {
     const tools = ['React', 'Vue', 'Laravel', 'Spring Boot', 'VSCode', 'Vim', 'etc'];
+    const navigate = useNavigate();
+    const location = useLocation(); // Obtiene la ruta actual
+
+    const buttons = [
+        { path: "/all", label: "Todos" },
+        { path: "/backend", label: "BackEnd" },
+        { path: "/frontend", label: "FrontEnd" },
+        { path: "/devops", label: "DevOps" },
+        { path: "/tools", label: "Tools" },
+    ];
 
     return (
-        <>
-            <div className="flex flex-col justify-center align-middle items-center w-3/6">
-                {
-                    !success ? (
-                        <>
-                            <p className="w-full mb-4 text-2xl dark:text-gray-50">
-                                <span className="text-5xl font-bold">C</span>onsulte comandos de distintos herramientas y frameworks para desarrollo web, así como :&nbsp;
-                                {tools.map(el => (<span className="text-purple-700" key={el}>{el}, </span>))}
-                            </p>
-                        </>
-                    ) : null
-                }
+        <div className="flex flex-col justify-center items-center w-full px-4">
+            {!success && (
+                <p className="w-1/2 mb-4 text-2xl dark:text-gray-50">
+                    <span className="text-5xl font-bold">C</span>onsulte comandos de distintas herramientas y frameworks para desarrollo web, así como:&nbsp;
+                    {tools.map(el => (
+                        <span className="text-purple-700" key={el}>{el}, </span>
+                    ))}
+                </p>
+            )}
 
-                <SearchQuick />
+            <SearchQuick />
 
-                <div className="flex gap-4">
+            <div className="hidden sm:flex gap-4">
+                {buttons.map(({ path, label }) => (
                     <button
-                        onClick={() => showCards()}
-                        className="bg-gray-200 border-0 rounded-2xl py-2 px-4 mt-4 animate-bounce hover:shadow-lg hover:animate-[wiggle_1s_ease-in-out_infinite]"
-                    >Todos</button>
-                    <button
-                        className="bg-gray-200 border-0 rounded-2xl py-2 px-4 mt-4 animate-bounce hover:shadow-lg hover:animate-[wiggle_1s_ease-in-out_infinite]"
-                    >BackEnd</button>
-                    <button
-                        className="bg-gray-200 border-0 rounded-2xl py-2 px-4 mt-4 animate-bounce hover:shadow-lg hover:animate-[wiggle_1s_ease-in-out_infinite]"
-                    >FrontEnd</button>
-                    <button
-                        className="bg-gray-200 border-0 rounded-2xl py-2 px-4 mt-4 animate-bounce hover:shadow-lg hover:animate-[wiggle_1s_ease-in-out_infinite]"
-                    >DevOps</button>
-                    <button
-                        className="bg-gray-200 border-0 rounded-2xl py-2 px-4 mt-4 animate-bounce hover:shadow-lg hover:animate-[wiggle_1s_ease-in-out_infinite]"
-                    >Tools</button>
-                </div>
+                        key={path}
+                        onClick={() => navigate(path)}
+                        className={`border-0 rounded-2xl py-2 px-4 mt-4 hover:shadow-lg 
+                        ${location.pathname === path ? "bg-purple-700 text-white" : "bg-gray-200"}
+                        animate-bounce hover:animate-[wiggle_1s_ease-in-out_infinite]`}
+                    >
+                        {label}
+                    </button>
+                ))}
             </div>
-        </>
+        </div>
     );
 }
 

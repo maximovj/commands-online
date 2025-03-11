@@ -17,7 +17,7 @@ function Layout() {
 
       <Header />
       <Container>
-        <div className='min-h-screen flex flex-col items-center justify-center'>
+        <div className='min-h-screen flex flex-col'>
           <Outlet />  {/* Aquí se renderizan las páginas dinámicas */}
         </div>
       </Container>
