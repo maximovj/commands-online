@@ -47,7 +47,7 @@ function Tools() {
                         onClick={handleReset}
                         className="text-red-600 rounded-4xl"
                     >
-                        Reset
+                        Limpiar
                     </button>
                 </div>
 
