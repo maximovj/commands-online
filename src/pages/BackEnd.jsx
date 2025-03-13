@@ -35,7 +35,7 @@ function BackEnd() {
                         value={selectedFilter}
                         onChange={(e) => setSelectedFilter(e.target.value)}
                     >
-                        <option value="null" className="text-gray-500">Language</option>
+                        <option value="null" className="text-gray-500">Lenguaje</option>
                         {filter.map((el, index) => (
                             <option key={index} value={el} className="text-gray-900 dark:text-gray-100">
                                 {el}
@@ -47,7 +47,7 @@ function BackEnd() {
                         onClick={handleReset}
                         className="text-red-600 rounded-4xl"
                     >
-                        Reset
+                        Limpiar
                     </button>
                 </div>
 
