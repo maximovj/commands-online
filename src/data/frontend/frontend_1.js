@@ -14,6 +14,22 @@ export default [
                 command: "vue add vuex",
                 description: "Añade Vuex al proyecto",
             },
+            {
+                command: "npm install axios",
+                description: "Instala Axios para hacer peticiones HTTP",
+            },
+            {
+                command: "npm install @vueuse/core",
+                description: "Instala VueUse, una colección de composables útiles",
+            },
+            {
+                command: "npm install -D tailwindcss postcss autoprefixer",
+                description: "Instala Tailwind CSS en Vue",
+            },
+            {
+                command: "npm run dev",
+                description: "Inicia el servidor de desarrollo",
+            },
         ],
     },
 
@@ -31,6 +47,22 @@ export default [
             {
                 command: "npm install redux react-redux",
                 description: "Instala Redux para gestión de estado",
+            },
+            {
+                command: "npm install axios",
+                description: "Instala Axios para hacer peticiones HTTP",
+            },
+            {
+                command: "npm install tailwindcss postcss autoprefixer",
+                description: "Instala Tailwind CSS en React",
+            },
+            {
+                command: "npm install @mui/material @emotion/react @emotion/styled",
+                description: "Instala Material UI en React",
+            },
+            {
+                command: "npm start",
+                description: "Inicia el servidor de desarrollo de React",
             },
         ],
     },
@@ -50,6 +82,18 @@ export default [
                 command: "ng generate component my-component",
                 description: "Genera un nuevo componente en Angular",
             },
+            {
+                command: "ng generate service my-service",
+                description: "Genera un nuevo servicio en Angular",
+            },
+            {
+                command: "ng generate module my-module",
+                description: "Genera un nuevo módulo en Angular",
+            },
+            {
+                command: "ng serve",
+                description: "Inicia el servidor de desarrollo de Angular",
+            },
         ],
     },
 
@@ -63,6 +107,18 @@ export default [
             {
                 command: "npm install -D svelte-preprocess",
                 description: "Instala el preprocesador de Svelte",
+            },
+            {
+                command: "npm install axios",
+                description: "Instala Axios para hacer peticiones HTTP",
+            },
+            {
+                command: "npm install tailwindcss postcss autoprefixer",
+                description: "Instala Tailwind CSS en Svelte",
+            },
+            {
+                command: "npm run dev",
+                description: "Inicia el servidor de desarrollo de Svelte",
             },
         ],
     },
