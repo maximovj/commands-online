@@ -54,7 +54,15 @@ function BackEnd() {
                 <div className="w-full mx-auto h-0.5 border-0 bg-gray-800 dark:bg-gray-200 rounded-lg mb-4"></div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                    {filteredList.map(el => (<Card key={el.id} el={el} />))}
+                    {filteredList.map(el => (<Card
+                        key={el.id}
+                        route={`/commands/${el.alias.toLowerCase()}`}
+                        alias={el.alias}
+                        commands={[{
+                            description: el.description,
+                            command: el.command,
+                        }]}
+                    />))}
                 </div>
             </div>
         </>
