@@ -29,7 +29,7 @@ function ButtonUp() {
                 } bg-cyan-700 hover:bg-cyan-600 cursor-pointer text-gray-50 rounded-full h-14 w-14 fixed bottom-4 right-4 animate-border-pulse`}
             onClick={scrollToTop}
         >
-            <span class="material-icons">
+            <span className="material-icons">
                 arrow_upward
             </span>
         </button>

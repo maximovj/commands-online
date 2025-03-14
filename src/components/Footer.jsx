@@ -9,7 +9,7 @@ const Footer = () => {
                             href="https://github.com/maximovj"
                             target="_blank"
                             rel="noopener noreferrer"
-                            referrerpolicy="no-referrer">Víctor J.</a>
+                            referrerPolicy="no-referrer">Víctor J.</a>
                     </span>
                 </p>
             </div>
