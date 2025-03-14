@@ -9,6 +9,7 @@ import BackEnd from './pages/BackEnd';
 import DevOps from './pages/DevOps';
 import FrontEnd from './pages/FrontEnd';
 import Tools from './pages/Tools';
+import Commands from './pages/Commands';
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path='frontend' element={<FrontEnd />}></Route>
                     <Route path='devops' element={<DevOps />}></Route>
                     <Route path='tools' element={<Tools />}></Route>
+                    <Route path='commands/:alias' element={<Commands />}></Route>
                     <Route path="*" element={<NotFound title={'OOPS'} text={'Página no encontrada'} />} /> {/* Ruta para manejo de 404 */}
                 </Route>
             </Routes>
