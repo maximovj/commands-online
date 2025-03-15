@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import SearchQuick from "./SearchQuick";
+import routes from '../routes.js';
 
 function ToolBar({ success }) {
     const tools = ['React', 'Vue', 'Laravel', 'Spring Boot', 'VSCode', 'Vim', 'etc'];
@@ -7,11 +8,11 @@ function ToolBar({ success }) {
     const location = useLocation(); // Obtiene la ruta actual
 
     const buttons = [
-        { path: "/all", label: "Todos" },
-        { path: "/backend", label: "BackEnd" },
-        { path: "/frontend", label: "FrontEnd" },
-        { path: "/devops", label: "DevOps" },
-        { path: "/tools", label: "Tools" },
+        { path: routes.All, label: "Todos" },
+        { path: routes.BackEnd, label: "BackEnd" },
+        { path: routes.FrontEnd, label: "FrontEnd" },
+        { path: routes.DevOps, label: "DevOps" },
+        { path: routes.Tools, label: "Tools" },
     ];
 
     return (
