@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ToolBar from "../components/ToolBar";
 import Card from '../components/Card';
-import { commands_backend } from '../data/commands';
+import { commands_backend } from '../assets/data/commands';
 
 function BackEnd() {
     const [list, setList] = useState([]);  // Lista de elementos a mostrar

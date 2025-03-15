@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ToolBar from "../components/ToolBar";
 import Card from '../components/Card';
-import { commands } from '../data/commands';
+import { commands } from '../assets/data/commands';
 import { useParams } from 'react-router-dom';
 
 function Commands() {

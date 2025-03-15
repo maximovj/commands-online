@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ToolBar from "../components/ToolBar";
 import Card from '../components/Card';
-import { commands_tools } from '../data/commands';
+import { commands_tools } from '../assets/data/commands';
 
 function Tools() {
     const [list, setList] = useState([]);  // Lista de elementos a mostrar
