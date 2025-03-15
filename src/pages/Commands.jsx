@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 function Commands() {
     const { alias } = useParams();
     const [list, setList] = useState([]);
-    const [allCommands, setAllCommands] = useState([]);
 
     useEffect(() => {
         setList(commands);
@@ -27,8 +26,6 @@ function Commands() {
         return acc.concat(commands);
     }, []);
 
-    console.log(allCommandsList);
-
     return (
         <>
             <ToolBar success={true} />
@@ -42,7 +39,6 @@ function Commands() {
                     />))}
                     {allCommandsList.map(el => (<Card
                         key={el.id}
-
                         alias={el.alias}
                         commands={[{ ...el }]}
                     />))}
