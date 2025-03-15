@@ -20,11 +20,12 @@ function Card({ alias, description, command, commands, route }) {
                 <p className="mt-2 text-sm">{description}</p>
                 <p className="mt-2 font-bold text-sm">{command}</p>
 
-                <div className="mt-3">
+                {route ? (<div className="mt-3">
                     <button onClick={() => nav(route)} className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-400 px-2 py-1 rounded-md">
                         Ver más
                     </button>
-                </div>
+                </div>) : null}
+
 
                 <div className="flex flex-col">
 
