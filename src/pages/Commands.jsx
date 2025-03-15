@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 function Commands() {
     const { alias } = useParams();
     const [list, setList] = useState([]);
+    const [allCommands, setAllCommands] = useState([]);
 
     useEffect(() => {
         setList(commands);
@@ -20,6 +21,14 @@ function Commands() {
             tags.includes(alias)
     });
 
+
+    const allCommandsList = filteredList.reduce((acc, el) => {
+        const commands = el.commands.map(elx => ({ ...elx, alias: el.alias }));
+        return acc.concat(commands);
+    }, []);
+
+    console.log(allCommandsList);
+
     return (
         <>
             <ToolBar success={true} />
@@ -28,9 +37,14 @@ function Commands() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     {filteredList.map(el => (<Card
                         key={el.id}
-                        route={`/commands/${el.alias.toLowerCase()}`}
                         alias={el.alias}
-                        commands={el.commands}
+                        commands={[{ command: el.command, description: el.description, alias: el.alias }]}
+                    />))}
+                    {allCommandsList.map(el => (<Card
+                        key={el.id}
+
+                        alias={el.alias}
+                        commands={[{ ...el }]}
                     />))}
                 </div>
             </div>
