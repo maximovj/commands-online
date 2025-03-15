@@ -31,7 +31,7 @@ export default [
                 description: "Ejecuta el servidor Node.js",
             },
         ],
-        tags: ['javascript'],
+        tags: ['javascript', 'demo'],
     },
 
     // 🟤 Laravel
@@ -67,7 +67,7 @@ export default [
                 description: "Ejecuta los seeders de la base de datos",
             },
         ],
-        tags: ['php'],
+        tags: ['php', 'demo'],
     },
 
     // 🔵 Python
@@ -110,6 +110,6 @@ export default [
                 description: "Activa el entorno virtual en Windows",
             },
         ],
-        tags: ['python'],
+        tags: ['python', 'demo'],
     },
 ];
