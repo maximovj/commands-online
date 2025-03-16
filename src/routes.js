@@ -9,7 +9,7 @@ const routes = {
     DevOps: '/devops',
     Tools: '/tools',
     CommandsByAlias: '/commands/:alias',
-    NotFound: 'page/not-found',
+    NotFound: '/page/not-found',
 };
 
 export default routes;
