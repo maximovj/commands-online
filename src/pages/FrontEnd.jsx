@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ToolBar from "../components/ToolBar";
 import Card from '../components/Card';
-import { commands_frontend } from '../data/commands';
+import { commands_frontend } from '../assets/data/commands';
+import routes from '../routes.js';
 
 function FrontEnd() {
     const [list, setList] = useState([]);  // Lista de elementos a mostrar
@@ -56,7 +57,7 @@ function FrontEnd() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     {filteredList.map(el => (<Card
                         key={el.id}
-                        route={`/commands/${el.alias.toLowerCase()}`}
+                        route={routes.CommandsByAlias.replace(':alias', el.alias.toLowerCase())}
                         alias={el.alias}
                         commands={[{
                             description: el.description,
