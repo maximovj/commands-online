@@ -24,6 +24,7 @@ const App = () => {
                     <Route path={routes.DevOps} element={<DevOps />}></Route>
                     <Route path={routes.Tools} element={<Tools />}></Route>
                     <Route path={routes.CommandsByAlias} element={<Commands />}></Route>
+                    <Route path={routes.NotFound} element={<NotFound title={'OOPS'} text={'Página no encontrada'} />}></Route>
                     <Route path="*" element={<NotFound title={'OOPS'} text={'Página no encontrada'} />} /> {/* Ruta para manejo de 404 */}
                 </Route>
             </Routes>
